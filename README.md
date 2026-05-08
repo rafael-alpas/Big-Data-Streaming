@@ -6,10 +6,9 @@ This project demonstrates a real-time data engineering pipeline. It simulates a 
 
 *Note: The source code is restricted due to MAPUA University academic integrity requirements. This repository serves as a technical showcase and documentation of the architecture.*
 
-### 📺 Technical Walkthrough
-Click the thumbnail below to watch the pipeline in action, including terminal logs showing real-time data ingestion and database persistence.
+### 📺 Project Demo
+> **[Click here to watch the Technical Walkthrough on YouTube](https://youtu.be/vA0sU4RtFNQ)**
 
-[![Big Data Pipeline Demo](https://img.youtube.com/vi/vA0sU4RtFNQ/0.jpg)](https://youtu.be/vA0sU4RtFNQ)
 ## 🏗️ Architecture
 1. **Data Producer:** A Python-based script generating simulated high-velocity event data.
 2. **Message Broker:** **Apache Kafka** manages the message queues and ensures fault-tolerant data streaming.
