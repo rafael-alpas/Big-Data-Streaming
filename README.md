@@ -4,7 +4,7 @@ Built a distributed streaming system featuring a producer-consumer architecture 
 ## 📌 Project Overview
 This project demonstrates a real-time data engineering pipeline. It simulates a high-velocity data source (Producer) that streams messages through **Apache Kafka**, processes them via **Apache Spark Structured Streaming**, and persists the final state into an **Apache Cassandra** NoSQL database.
 
-*Note: The source code is restricted due to MAPUA University academic integrity requirements. This repository serves as a technical showcase and documentation of the architecture.*
+*Note: This repository serves as a technical showcase and documentation of the architecture. The source code is passed as a major project at MAPUA University*
 
 ### 📺 Project Demo
 > **[Click here to watch the demo on YouTube](https://youtu.be/vA0sU4RtFNQ)**
