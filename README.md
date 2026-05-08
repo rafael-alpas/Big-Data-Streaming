@@ -7,18 +7,20 @@ This project demonstrates a real-time data engineering pipeline. It simulates a 
 *Note: The source code is restricted due to MAPUA University academic integrity requirements. This repository serves as a technical showcase and documentation of the architecture.*
 
 ### 📺 Project Demo
-> **[Click here to watch the Technical Walkthrough on YouTube](https://youtu.be/vA0sU4RtFNQ)**
+> **[Click here to watch the demo on YouTube](https://youtu.be/vA0sU4RtFNQ)**
 
 ## 🏗️ Architecture
-1. **Data Producer:** A Python-based script generating simulated high-velocity event data.
-2. **Message Broker:** **Apache Kafka** manages the message queues and ensures fault-tolerant data streaming.
-3. **Stream Processing:** **Apache Spark** consumes the Kafka topics, performs real-time transformations, and handles data windowing.
-4. **Sink/Storage:** **Apache Cassandra** stores the processed data for low-latency querying.
+1. **Multi-Instance Producers:** Orchestrated ten simultaneous Python-based sensor scripts (sensor_01 through sensor_10) to generate high-velocity, JSON-formatted traffic event data.
+2. **Distributed Message Broker:** Apache Kafka (orchestrated via Zookeeper) acts as the central bus, managing a dedicated topic (css182-grp-06) to decouple data generation from downstream consumption.
+3. **Stream Processing:** Apache Spark Structured Streaming (via spark-shell) consumes the Kafka topics in real-time, handling data transformations and batch windowing.
+4. **NoSQL Persistence:** Apache Cassandra serves as the storage sink. Data is persisted into a dedicated keyspace (p1_keyspace) and table (prod_storage) using an integration script that executes optimized Prepared Statements.
 
 ## 🚀 Key Learning Outcomes
-- **Distributed Systems:** Managing communication between multiple services using Docker.
-- **Data Consistency:** Ensuring "exactly-once" or "at-least-once" delivery semantics within Kafka.
-- **NoSQL Modeling:** Designing Cassandra tables optimized for write-heavy streaming workloads.
+- **Distributed System Orchestration:** Gained hands-on experience initializing and managing Zookeeper and Kafka brokers within a Linux environment to handle asynchronous data streams.
+- **Real-Time Data Ingestion:** Successfully implemented a multi-producer architecture to simulate real-world data spikes, managing ten concurrent data streams into a single broker.
+- **Structured Streaming & Transformations:** Developed proficiency in Spark SQL and DataFrames to process live Kafka streams, utilizing .readStream() and .writeStream() for real-time output.
+- **NoSQL Schema Design:** Designed and managed Cassandra keyspaces using CQLSH, implementing specific Replication Factors and partition keys to ensure data availability and fault tolerance.
+- **System Integration:** Built a robust data bridge between Kafka and Cassandra, mastering JSON deserialization and automated persistence for write-heavy streaming workloads.
 
 ## 🛠️ Tech Stack
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
