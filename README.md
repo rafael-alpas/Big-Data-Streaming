@@ -9,6 +9,9 @@ This project demonstrates a real-time data engineering pipeline. It simulates a 
 ### 📺 Project Demo
 > **[Click here to watch the demo on YouTube](https://youtu.be/vA0sU4RtFNQ)**
 
+### 📁 Project Documentation
+[📄 Project Documentation](./Big%20Data%20Streaming%20Project.pdf)
+
 ## 🏗️ Architecture
 1. **Multi-Instance Producers:** Orchestrated ten simultaneous Python-based sensor scripts (sensor_01 through sensor_10) to generate high-velocity, JSON-formatted traffic event data.
 2. **Distributed Message Broker:** Apache Kafka (orchestrated via Zookeeper) acts as the central bus, managing a dedicated topic (css182-grp-06) to decouple data generation from downstream consumption.
